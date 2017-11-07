@@ -12,12 +12,14 @@ public class CountingCharacters {
         HashMap<Character, Integer> letterCount = new HashMap<>();
 
         for (char each : charsInString){
-            if (letterCount.containsKey(each)){
-                //if letter is already in map increment the count
-                letterCount.put(each, letterCount.get(each) + 1);
-            } else {
-                //if letter is not already in map add it
-                letterCount.put(each, 1);
+            if (Character.isLetter(each)) {
+                if (letterCount.containsKey(each)) {
+                    //if letter is already in map increment the count
+                    letterCount.put(each, letterCount.get(each) + 1);
+                } else {
+                    //if letter is not already in map add it
+                    letterCount.put(each, 1);
+                }
             }
         }
 
